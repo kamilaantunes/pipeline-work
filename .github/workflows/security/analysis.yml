@@ -1,0 +1,45 @@
+name: Security Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependencies
+        run: |
+          pip install bandit requests colorama
+
+      - name: Run Bandit Security Analysis
+        run: |
+          bandit -r ./ > bandit_report_with_cwe.json || true
+          cat bandit_report_with_cwe.json
+
+      - name: Run Security Score Analysis
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/analyze_score.py
+
+      - name: Upload Security Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: security_report.md
+
+    - name: Adjust File Permissions
+      run: chmod -R 777 scripts/
