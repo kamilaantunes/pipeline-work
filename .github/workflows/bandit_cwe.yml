@@ -25,7 +25,7 @@ jobs:
         run: pip install bandit
 
       - name: Run Bandit
-        run: bandit -r ./ --severity-level high > bandit_report.json || true
+        run: bandit -r ./ --severity-level high -f json -o bandit_report.json || echo '{}' > bandit_report.json
 
       - name: Add CWE Codes
         run: python3 add_cwe_to_bandit.py
