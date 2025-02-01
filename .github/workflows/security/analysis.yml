@@ -43,6 +43,3 @@ jobs:
 
     - name: Adjust File Permissions
       run: chmod -R 777 scripts/
-
-on:
-  workflow_call:
