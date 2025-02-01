@@ -12,6 +12,9 @@ jobs:
   bandit-analysis:
     runs-on: ubuntu-22.04
 
+  call-security-analysis:
+    uses: ./.github/workflows/security/analysis.yml
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
