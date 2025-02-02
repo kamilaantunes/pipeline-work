@@ -1,1 +1,1 @@
-# pipeline-work
+![Security Score](badges/security.svg)

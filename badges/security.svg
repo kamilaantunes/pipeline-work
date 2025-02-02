@@ -1,0 +1,38 @@
+import json
+import os
+
+def gerar_badge(score, output_path="badges/security.svg"):
+    """Gera um badge SVG baseado no score de segurança."""
+    # Definição de cores
+    if score >= 80:
+        color = "green"
+    elif score >= 50:
+        color = "yellow"
+    else:
+        color = "red"
+    
+    badge_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="150" height="20">
+        <rect width="150" height="20" fill="black"/>
+        <text x="10" y="14" fill="white" font-family="Arial" font-size="12">Security Score: {score}</text>
+        <rect x="100" width="50" height="20" fill="{color}"/>
+    </svg>'''
+    
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w") as f:
+        f.write(badge_svg)
+    
+    print(f"Badge gerado em {output_path}")
+
+def main():
+    """Lê o relatório de segurança e gera a badge."""
+    report_path = "bandit_report_with_cwe.json"
+    if not os.path.exists(report_path):
+        print("Nenhum relatório encontrado.")
+        return
+    
+    score, _, _, _ = calcular_score(report_path)
+    gerar_badge(score)
+
+if _name_ == "_main_":
+    from security_score_analysis import calcular_score
+    main()
