@@ -1,0 +1,48 @@
+{
+  "errors": [
+    {
+      "filename": "./test/files/decrypt.py",
+      "reason": "syntax error while parsing AST from file"
+    },
+    {
+      "filename": "./test/files/decrypt_bruteforce.py",
+      "reason": "syntax error while parsing AST from file"
+    }
+  ],
+  "generated_at": "2025-02-02T17:49:52Z",
+  "metrics": {
+    "./test/files/decrypt.py": {
+      "loc": 4,
+      "nosec": 0
+    },
+    "./test/files/decrypt_bruteforce.py": {
+      "loc": 8,
+      "nosec": 0
+    },
+    "./test/files/encrypt.py": {
+      "CONFIDENCE.HIGH": 0.0,
+      "CONFIDENCE.LOW": 0.0,
+      "CONFIDENCE.MEDIUM": 0.0,
+      "CONFIDENCE.UNDEFINED": 0.0,
+      "SEVERITY.HIGH": 0.0,
+      "SEVERITY.LOW": 0.0,
+      "SEVERITY.MEDIUM": 0.0,
+      "SEVERITY.UNDEFINED": 0.0,
+      "loc": 7,
+      "nosec": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 0.0,
+      "CONFIDENCE.LOW": 0.0,
+      "CONFIDENCE.MEDIUM": 0.0,
+      "CONFIDENCE.UNDEFINED": 0.0,
+      "SEVERITY.HIGH": 0.0,
+      "SEVERITY.LOW": 0.0,
+      "SEVERITY.MEDIUM": 0.0,
+      "SEVERITY.UNDEFINED": 0.0,
+      "loc": 19,
+      "nosec": 0
+    }
+  },
+  "results": []
+}
