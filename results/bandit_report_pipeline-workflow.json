@@ -1,6 +1,15 @@
 {
-  "errors": [],
-  "generated_at": "2025-02-02T17:42:00Z",
+  "errors": [
+    {
+      "filename": "./security_tests/juice-shop/test/files/decrypt.py",
+      "reason": "syntax error while parsing AST from file"
+    },
+    {
+      "filename": "./security_tests/juice-shop/test/files/decrypt_bruteforce.py",
+      "reason": "syntax error while parsing AST from file"
+    }
+  ],
+  "generated_at": "2025-02-02T18:02:08Z",
   "metrics": {
     "./add_cwe_to_bandit.py": {
       "CONFIDENCE.HIGH": 0.0,
@@ -26,7 +35,27 @@
       "loc": 72,
       "nosec": 0
     },
-    "_totals": {
+    "./security_tests/DVWA/tests/test_url.py": {
+      "CONFIDENCE.HIGH": 1.0,
+      "CONFIDENCE.LOW": 0.0,
+      "CONFIDENCE.MEDIUM": 0.0,
+      "CONFIDENCE.UNDEFINED": 0.0,
+      "SEVERITY.HIGH": 0.0,
+      "SEVERITY.LOW": 1.0,
+      "SEVERITY.MEDIUM": 0.0,
+      "SEVERITY.UNDEFINED": 0.0,
+      "loc": 61,
+      "nosec": 0
+    },
+    "./security_tests/juice-shop/test/files/decrypt.py": {
+      "loc": 4,
+      "nosec": 0
+    },
+    "./security_tests/juice-shop/test/files/decrypt_bruteforce.py": {
+      "loc": 8,
+      "nosec": 0
+    },
+    "./security_tests/juice-shop/test/files/encrypt.py": {
       "CONFIDENCE.HIGH": 0.0,
       "CONFIDENCE.LOW": 0.0,
       "CONFIDENCE.MEDIUM": 0.0,
@@ -35,9 +64,36 @@
       "SEVERITY.LOW": 0.0,
       "SEVERITY.MEDIUM": 0.0,
       "SEVERITY.UNDEFINED": 0.0,
-      "loc": 83,
+      "loc": 7,
+      "nosec": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 1.0,
+      "CONFIDENCE.LOW": 0.0,
+      "CONFIDENCE.MEDIUM": 0.0,
+      "CONFIDENCE.UNDEFINED": 0.0,
+      "SEVERITY.HIGH": 0.0,
+      "SEVERITY.LOW": 1.0,
+      "SEVERITY.MEDIUM": 0.0,
+      "SEVERITY.UNDEFINED": 0.0,
+      "loc": 163,
       "nosec": 0
     }
   },
-  "results": []
+  "results": [
+    {
+      "code": "89 \n90     assert len(broken_urls) == 0, \"Broken URLs Detected.\"\n",
+      "filename": "./security_tests/DVWA/tests/test_url.py",
+      "issue_confidence": "HIGH",
+      "issue_severity": "LOW",
+      "issue_text": "Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.",
+      "line_number": 90,
+      "line_range": [
+        90
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/latest/plugins/b101_assert_used.html",
+      "test_id": "B101",
+      "test_name": "assert_used"
+    }
+  ]
 }

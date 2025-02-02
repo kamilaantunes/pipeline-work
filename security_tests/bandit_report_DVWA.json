@@ -1,6 +1,6 @@
 {
   "errors": [],
-  "generated_at": "2025-02-02T17:48:11Z",
+  "generated_at": "2025-02-02T18:02:30Z",
   "metrics": {
     "./tests/test_url.py": {
       "CONFIDENCE.HIGH": 1.0,

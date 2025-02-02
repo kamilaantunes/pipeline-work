@@ -2,9 +2,9 @@
 
 # Diretório onde os relatórios serão armazenados
 mkdir -p security_tests
-cd security_tests
+cd security_tests || exit 1
 
-# Lista de repositórios a serem testados
+# Repositórios a serem testados
 REPOS=(
     "https://github.com/digininja/DVWA"
     "https://github.com/juice-shop/juice-shop"
@@ -19,7 +19,7 @@ for repo in "${REPOS[@]}"; do
     else
         git clone $repo
     fi
-    cd $repo_name
+    cd $repo_name || continue
     bandit -r . -f json -o ../bandit_report_${repo_name}.json || echo "Erro ao rodar Bandit em $repo_name"
     cd ..
 done
