@@ -87,7 +87,7 @@ anterior_report_path = "previous_bandit_report.json"
 
 # Configuração do GitHub (adicionar token e repositório ao pipeline)
 github_token = os.getenv("GITHUB_TOKEN")  # Definir como variável de ambiente
-repo = "kamilaantunes/bandit-cwe-pipeline"
+repo = "kamilaantunes/pipeline-work"
 
 # Comparar scores e criar issue se necessário
 comparar_scores(atual_report_path, anterior_report_path, github_token, repo)
